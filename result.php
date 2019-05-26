@@ -77,6 +77,7 @@
         <p><strong>CPU:</strong>  <?php echo $rows[$i]["cpu"]; ?></p>
         <p><strong>Battery capacity:</strong>  <?php echo $rows[$i]["battery_capacity"]; ?> mAh</p>
         <p><strong>Weitgh:</strong>  <?php echo $rows[$i]["weight"]; ?> g</p>
+        <p><strong>Price:</strong>  <?php echo $rows[$i]["price"]; ?> SEK</p>
         <hr>
         <h3><strong>Total Score:</strong></h3> <p style="font-size: 25px;"><?php echo $rows[$i]["score"]; ?></p>
       </div>
