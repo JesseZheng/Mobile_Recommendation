@@ -27,17 +27,23 @@
         $battery=$_POST["battery"];
         $charge=$_POST["charge"];
 
-        $sql="select id, name, price, battery_capacity,($display*display_score + $front*selfie_score + $back*back_cam + $game*cpu_rank + $charge*battery_charge + $battery*battery_life) as score";
+        $color=1;
+        $gender=$_POST["gender"];
+        if ($gender == "F") {
+          $color=$color+0.5;
+        }
+
+        $sql="select id, name, price, cpu, battery_capacity, weight, ($display*display_score + $front*selfie_score + $back*back_cam + $game*cpu_rank + $charge*battery_charge + $battery*battery_life + customer_service + $color*color_selection + water_proof) as score";
         if($_POST["price"]==0){
           $sql=$sql . " from mobile order by score desc limit 5;";
         } else{
           $price=$_POST["price"];
-          $sql=$sql . " where price <= $price from mobile order by score desc limit 5;";
+          $sql=$sql . " from mobile where price <= $price order by score desc limit 5;";
         }
 
-        $result=mysqli_query($conn, $sql);
-        $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
-
+        // $result=mysqli_query($conn, $sql);
+        // $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
+        $rows=getResults($conn, $sql);
         // echo json_encode($row, true);
 
     ?>
@@ -68,12 +74,11 @@
       </div>
       <div class="col-md-7" style="padding-top: 10px; padding-bottom: 10px;">
         <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
-        <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
-        <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
-        <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
-        <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
-        <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
-        <p><strong>Total Score:</strong> <?php echo $rows[$i]["score"]; ?></p>
+        <p><strong>CPU:</strong>  <?php echo $rows[$i]["cpu"]; ?></p>
+        <p><strong>Battery capacity:</strong>  <?php echo $rows[$i]["battery_capacity"]; ?> mAh</p>
+        <p><strong>Weitgh:</strong>  <?php echo $rows[$i]["weight"]; ?> g</p>
+        <hr>
+        <h3><strong>Total Score:</strong></h3> <p style="font-size: 25px;"><?php echo $rows[$i]["score"]; ?></p>
       </div>
       <div class="col-md-1"></div>
     </div>

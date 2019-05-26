@@ -11,3 +11,19 @@
     <hr>
   </div>
 </div>
+
+<?php
+
+function getResults($connection, $sql){ 
+    $query = mysqli_query($connection, $sql);  
+    $results = array(); 
+    if($query){ 
+     while($row = mysqli_fetch_assoc($query)){ 
+      $results[] = $row; 
+     } 
+    } 
+
+    return $results; 
+} 
+
+?>

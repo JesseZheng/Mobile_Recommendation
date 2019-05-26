@@ -35,10 +35,12 @@
 
     <div>
       <form class="form-horizontal" method="post" action="result.php">
-      
-        <h1>Budget</h1>
+
+        <h1>Customize your needs</h1>
+        <hr>
+
         <div class="form-group">
-            <label class="col-sm-2 ">Price: </label>
+            <label class="col-sm-2 ">1. Price: </label>
             <div class="col-sm-4">
             <select name="price" class="form-control">
               <option value="2000">≤ 2000</option>
@@ -53,9 +55,23 @@
             </div>
         </div>
 
-        <h1>Display</h1>
         <div class="form-group">
-            <label class="col-sm-12">How often do you watch the video by mobile phone?</label>
+            <label class="col-sm-2">2. Gender: </label>
+            <div class="col-sm-4">
+              <label class="radio-inline">
+                <input type="radio" name="gender" id="inlineRadio1" value="M"> Male
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="gender" id="inlineRadio2" value="F"> Female
+              </label>
+            </div>
+            <div class="col-sm-4">
+              <br>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-12">3. How often do you watch the video by mobile phone?</label>
             <div class="col-sm-12">
               <label class="radio-inline">
                 <input type="radio" name="display" id="inlineRadio1" value="3"> Always
@@ -69,9 +85,8 @@
             </div>
         </div>
 
-        <h1>Camera</h1>
         <div class="form-group">
-            <label class="col-sm-12">How often do you use the front camera?</label>
+            <label class="col-sm-12">4. How often do you use the front camera?</label>
             <div class="col-sm-12">
               <label class="radio-inline">
                 <input type="radio" name="front" id="inlineRadio1" value="3"> Always
@@ -86,7 +101,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-sm-12">How often do you take photo by mobile phone?</label>
+            <label class="col-sm-12">5. How often do you take photo by mobile phone?</label>
             <div class="col-sm-12">
               <label class="radio-inline">
                 <input type="radio" name="back" id="inlineRadio1" value="3"> Always
@@ -100,9 +115,8 @@
             </div>
         </div>
 
-        <h1>Performance</h1>
         <div class="form-group">
-            <label class="col-sm-12">How often do you play large mobile games?</label>
+            <label class="col-sm-12">6. How often do you play large mobile games?</label>
             <div class="col-sm-12">
               <label class="radio-inline">
                 <input type="radio" name="game" id="inlineRadio1" value="3"> Always
@@ -116,9 +130,8 @@
             </div>
         </div>
 
-        <h1>Battery</h1>
         <div class="form-group">
-            <label class="col-sm-12">How much do you care about the battery life of mobile phone?</label>
+            <label class="col-sm-12">7. How much do you care about the battery life of mobile phone?</label>
             <div class="col-sm-12">
               <label class="radio-inline">
                 <input type="radio" name="battery" id="inlineRadio1" value="3"> Very much
@@ -133,7 +146,7 @@
         </div>
 
         <div class="form-group">
-            <label class="col-sm-12">How much do you care about the charging speed of mobile phone?</label>
+            <label class="col-sm-12">8. How much do you care about the charging speed of mobile phone?</label>
             <div class="col-sm-12">
               <label class="radio-inline">
                 <input type="radio" name="charge" id="inlineRadio1" value="3"> Very much
@@ -146,7 +159,9 @@
               </label>
             </div>
         </div>
-        <div class="form-group">
+
+        <hr>
+        <div class="form-group col-sm-12">
             <input type="submit" class="btn btn-info" value="Submit">
             <input type="reset" class="btn btn-warning" value="Reset">
         </div>
