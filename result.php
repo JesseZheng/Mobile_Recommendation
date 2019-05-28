@@ -33,7 +33,7 @@
           $color=$color+0.5;
         }
 
-        $sql="select id, name, price, cpu, battery_capacity, weight, ($display*display_score + $front*selfie_score + $back*back_cam + $game*cpu_rank + $charge*battery_charge + $battery*battery_life + customer_service + $color*color_selection + water_proof) as score";
+        $sql="select id, name, price, cpu, battery_capacity, weight, screen_size, ($display*display_score + $front*selfie_score + $back*back_cam + $game*cpu_rank + $charge*battery_charge + $battery*battery_life + customer_service + $color*color_selection + water_proof) as score";
         if($_POST["price"]==0){
           $sql=$sql . " from mobile order by score desc limit 5;";
         } else{
