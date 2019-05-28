@@ -37,7 +37,7 @@
         if($_POST["price"]==0){
           $sql=$sql . " from mobile order by score desc limit 5;";
         } else{
-          $price=$_POST["price"];
+          $price=$_POST["price"]*1.38;
           $sql=$sql . " from mobile where price <= $price order by score desc limit 5;";
         }
 
@@ -74,6 +74,7 @@
       </div>
       <div class="col-md-7" style="padding-top: 10px; padding-bottom: 10px;">
         <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
+        <p><strong>Screen size:</strong>  <?php echo $rows[$i]["screen_size"]; ?> inch</p>
         <p><strong>CPU:</strong>  <?php echo $rows[$i]["cpu"]; ?></p>
         <p><strong>Battery capacity:</strong>  <?php echo $rows[$i]["battery_capacity"]; ?> mAh</p>
         <p><strong>Weitgh:</strong>  <?php echo $rows[$i]["weight"]; ?> g</p>

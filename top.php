@@ -23,7 +23,7 @@
 
         // $sql="select `id`, `name`, `price`, `battery_capacity`,(`display_score` + `selfie_score` + `back_cam` + `cpu_rank` + `battery_charge` + `battery_life`) as `score` from `mobile` order by score desc limit 10;";
 
-        $sql="select id, name, price, battery_capacity, cpu, weight, (display_score + selfie_score + back_cam + cpu_rank + battery_charge + battery_life + customer_service + color_selection + water_proof) as score from mobile order by score desc limit 10;";
+        $sql="select id, name, price, battery_capacity, cpu, weight, screen_size,(display_score + selfie_score + back_cam + cpu_rank + battery_charge + battery_life + customer_service + color_selection + water_proof) as score from mobile order by score desc limit 10;";
 
         // $result=mysqli_query($conn, $sql);
         // $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
@@ -48,11 +48,12 @@
     <div class="row" id="content">
       <div class="col-md-2"><h2>No. <?php echo $i+1; ?></h2></div>
       <div class="col-md-3">
-        <img class="img-responsive" style="height: 255px;" src=<?php echo "images/".$rows[$i]["id"].".jpg";?>>
+        <img class="img-responsive" style="height: 255px; margin-top: 15px;" src=<?php echo "images/".$rows[$i]["id"].".jpg";?>>
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-6" style="padding-top: 10px; padding-bottom: 10px;">
         <p><strong>Phone name:</strong>  <?php echo $rows[$i]["name"]; ?></p>
+        <p><strong>Screen size:</strong>  <?php echo $rows[$i]["screen_size"]; ?> inch</p>
         <p><strong>CPU:</strong>  <?php echo $rows[$i]["cpu"]; ?></p>
         <p><strong>Battery capacity:</strong>  <?php echo $rows[$i]["battery_capacity"]; ?> mAh</p>
         <p><strong>Weitgh:</strong>  <?php echo $rows[$i]["weight"]; ?> g</p>
