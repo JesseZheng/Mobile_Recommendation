@@ -37,7 +37,7 @@
         if($_POST["price"]==0){
           $sql=$sql . " from mobile order by score desc limit 5;";
         } else{
-          $price=$_POST["price"]*1.38;
+          $price=$_POST["price"];
           $sql=$sql . " from mobile where price <= $price order by score desc limit 5;";
         }
 
